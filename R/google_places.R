@@ -141,15 +141,8 @@
 google_places <- function(
   search_string = NULL,
   location = NULL,
-  radar = FALSE,
-  radius = NULL,
-  rankby = NULL,
   keyword = NULL,
-  language = NULL,
   name = NULL,
-  place_type = NULL,
-  price_range = NULL,
-  open_now = NULL,
   page_token = NULL,
   simplify = TRUE,
   curl_proxy = NULL,
@@ -197,15 +190,8 @@ google_places <- function(
   map_url <- constructURL(
     map_url
     , c("location" = location
-        , "radius" = radius
-        , "rankby" = rankby
         , "keyword" = keyword
-        , "language" = language
         , "name" = name
-        , "type" = place_type
-        , "minprice" = price_range[1]
-        , "maxprice" = price_range[2]
-        , "opennow" = open_now
         , "pagetoken" = page_token
         , "key" = key
         )
