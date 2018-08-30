@@ -157,20 +157,12 @@ google_places <- function(
     location <- validateGeocodeLocation(location)
   }
 
-  logicalCheck(radar)
   logicalCheck(simplify)
   logicalCheck(open_now)
 
-  radar <- validateRadar(radar, search_string, keyword, name, place_type, location, radius)
-  location <- validateLocationSearch(location, search_string, radius, rankby, keyword, name, place_type)
-  radius <- validateRadius(radius)
-  rankby <- validateRankBy(rankby, location, search_string)
-  radius <- validateRadiusRankBy(rankby, radius, location)
+  location <- validateLocationSearch(location, search_string, keyword, name)
 
-  language <- validateLanguage(language)
   name <- validateName(name, search_string)
-  price_range <- validatePriceRange(price_range)
-  place_type <- validatePlaceType(place_type)
   page_token <- validatePageToken(page_token)
 
   ## construct the URL
